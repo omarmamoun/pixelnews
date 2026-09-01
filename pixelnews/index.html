@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Meta tags for character set, viewport, and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel News - بوابتك للأخبار</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header"> <!-- Main header of the site -->
+        <div class="container">
+            <div class="logo"> <!-- Logo section -->
+                <a href="index.html"><img src="img/Beige Pink Pastel Aesthetic Minimalist Signature Beauty Brand Facebook Cover (1).png" alt="شعار Pixel News" class="logo-image"></a>
+            </div>
+            <nav class="main-nav"> <!-- Main navigation menu -->
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="#">أخبار عاجلة</a></li>
+                    <li><a href="politics.html">سياسة</a></li>
+                    <li><a href="economy.html">اقتصاد</a></li>
+                    <li><a href="sports.html">رياضة</a></li>
+                    <li><a href="technology.html">تكنولوجيا</a></li>
+                    <li><a href="world.html">العالم</a></li>
+                    <li><a href="tourism.html">السياحة</a></li>
+                    <li><a href="environment.html">البيئة</a></li>
+                    <li><a href="culture.html">الثقافة والفنون</a></li>
+                    <li><a href="celebrities.html">المشاهير</a></li>
+                    <li><a href="events.html">المناسبات والوفيات</a></li>
+                    <li><a href="games.html">ألعاب ذكاء</a></li>
+                </ul>
+            </nav>
+            <div class="header-right-controls"> <!-- Right-aligned controls in the header -->
+                <label class="site-search" for="news-search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="news-search" type="search" placeholder="ابحث في الأخبار" aria-label="ابحث في الأخبار">
+                </label>
+                <div class="settings-container">
+                    <i class="fas fa-cog settings-icon" title="الإعدادات"></i>
+                    <div class="settings-menu">
+                        <div class="settings-menu-section">
+                            <h4>وضع العرض</h4>
+                            <div class="theme-switcher">
+                                <button id="light-mode-btn" class="theme-btn">فاتح</button>
+                                <button id="dark-mode-btn" class="theme-btn">داكن</button>
+                            </div>
+                        </div>
+                        <div class="settings-menu-section">
+                            <h4>حجم الخط</h4>
+                            <div class="font-size-switcher">
+                                <button id="font-small-btn" class="font-size-btn">صغير</button>
+                                <button id="font-medium-btn" class="font-size-btn">متوسط</button>
+                                <button id="font-large-btn" class="font-size-btn">كبير</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker">
+        <div class="ticker-title"><i class="fas fa-bolt" aria-hidden="true"></i> عاجل</div>
+        <div class="news-scroll">
+            <span>خبر عاجل 1: تحديثات هامة في الساحة السياسية...</span>
+            <span>خبر عاجل 2: مؤشرات اقتصادية إيجابية تظهر في الأسواق العالمية...</span>
+            <span>خبر عاجل 3: اكتشاف علمي جديد قد يغير مستقبل الطب...</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container"> <!-- Main content area -->
+        <section class="news-discovery" aria-label="أدوات تصفح الأخبار">
+            <div class="section-heading-inline">
+                <h2>استكشف الأخبار</h2>
+                <span id="search-status" aria-live="polite">أحدث التغطيات من فريق Pixel News</span>
+            </div>
+            <div class="category-filters" role="group" aria-label="تصفية حسب القسم">
+                <button class="filter-btn active" type="button" data-filter="all">الكل</button>
+                <button class="filter-btn" type="button" data-filter="سياسة">سياسة</button>
+                <button class="filter-btn" type="button" data-filter="اقتصاد">اقتصاد</button>
+                <button class="filter-btn" type="button" data-filter="رياضة">رياضة</button>
+                <button class="filter-btn" type="button" data-filter="تكنولوجيا">تكنولوجيا</button>
+            </div>
+        </section>
+
+        <section class="pulse-strip" aria-label="نبض المنصة">
+            <div class="pulse-item"><i class="fas fa-signal" aria-hidden="true"></i><span><strong>24</strong> خبرًا اليوم</span></div>
+            <div class="pulse-item"><i class="fas fa-clock" aria-hidden="true"></i><span>آخر تحديث <strong>منذ 8 دقائق</strong></span></div>
+            <div class="pulse-item"><i class="fas fa-fire" aria-hidden="true"></i><span>القصة الأبرز <strong>الطاقة النظيفة</strong></span></div>
+        </section>
+
+        <section class="trending-section" aria-labelledby="trending-title">
+            <div class="section-heading-inline">
+                <div><span class="section-kicker">يقرأها الجميع</span><h2 id="trending-title">الأكثر تداولًا الآن</h2></div>
+                <span class="live-label"><i class="fas fa-circle" aria-hidden="true"></i> مباشر</span>
+            </div>
+            <div class="trending-grid">
+                <a class="trending-item" href="article.html?id=featured-battery"><span class="trend-rank">01</span><span><small>أخبار دولية</small><strong>بطارية شمسية جديدة تفتح بابًا واسعًا للطاقة النظيفة</strong></span><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                <a class="trending-item" href="article.html?id=latest-ai-education"><span class="trend-rank">02</span><span><small>تكنولوجيا</small><strong>الذكاء الاصطناعي يعيد تصميم تجربة التعليم</strong></span><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                <a class="trending-item" href="article.html?id=latest-peace-talks"><span class="trend-rank">03</span><span><small>سياسة</small><strong>تقدم جديد في مفاوضات السلام بالشرق الأوسط</strong></span><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+            </div>
+        </section>
+
+        <!-- Featured Article Slider - Enhanced -->
+        <section class="featured-articles-section">
+            <div class="featured-wrapper">
+                <div class="featured-main">
+                    <section class="featured-articles-slider"> <!-- Section for the main news slider -->
+                        <!-- Featured Article 1 (Active by default) -->
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/featured/900/500" alt="صورة الخبر الرئيسي">
+                            <div class="article-content">
+                                <span class="category">أخبار دولية</span>
+                                <h2>علماء يعلنون عن بطارية ثورية تعمل بالطاقة الشمسية بكفاءة 90%</h2>
+                                <p>في إنجاز قد يغير مستقبل الطاقة النظيفة، كشف فريق دولي من الباحثين عن بطارية جديدة يمكنها تخزين الطاقة الشمسية بكفاءة غير مسبوقة.</p>
+                                <a href="article.html?id=featured-battery" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Featured Article 2 (Hidden by default) -->
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/featured2/900/500" alt="صورة خبر رئيسي 2">
+                            <div class="article-content">
+                                <span class="category">تكنولوجيا</span>
+                                <h2>ثورة الذكاء الاصطناعي: روبوتات الخدمة الذاتية تغزو المطارات</h2>
+                                <p>تتجه المطارات العالمية نحو استخدام روبوتات تعمل بالذكاء الاصطناعي لتقديم خدمات المسافرين بكفاءة عالية.</p>
+                                <a href="article.html?id=featured-ai-robots" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Featured Article 3 (Hidden by default) -->
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/featured3/900/500" alt="صورة خبر رئيسي 3">
+                            <div class="article-content">
+                                <span class="category">سياسة</span>
+                                <h2>قمة تاريخية لقادة العالم تناقش مستقبل الطاقة النظيفة</h2>
+                                <p>اجتمع قادة الدول الكبرى في قمة استثنائية لمناقشة سبل تسريع التحول نحو مصادر الطاقة المتجددة.</p>
+                                <a href="article.html?id=featured-climate-summit" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <div class="slider-dots"> <!-- Navigation dots for the slider -->
+                            <span class="dot active" data-slide-index="0"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </section>
+                </div>
+                <div class="featured-sidebar">
+                    <section class="featured-premium" aria-labelledby="premium-title">
+                        <div class="premium-badge"><i class="fas fa-star" aria-hidden="true"></i></div>
+                        <h3 id="premium-title">قصص مختارة</h3>
+                        <article class="premium-item">
+                            <img src="https://picsum.photos/seed/premium1/200/150" alt="صورة">
+                            <div>
+                                <span class="category-small">اقتصاد</span>
+                                <h4>النمو الاقتصادي يتجاوز التوقعات</h4>
+                                <a href="article.html?id=premium1"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                        <article class="premium-item">
+                            <img src="https://picsum.photos/seed/premium2/200/150" alt="صورة">
+                            <div>
+                                <span class="category-small">تكنولوجيا</span>
+                                <h4>ابتكار جديد في الذكاء الاصطناعي</h4>
+                                <a href="article.html?id=premium2"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content-grid">
+            <div class="main-column">
+                <section class="editor-note" aria-labelledby="editor-note-title">
+                    <div class="editor-note-mark"><i class="fas fa-quote-right" aria-hidden="true"></i></div>
+                    <div>
+                        <span class="section-kicker">رأي التحرير</span>
+                        <h2 id="editor-note-title">الخبر لا يكتمل دون سياقه</h2>
+                        <p>نختار لك التفاصيل التي تساعدك على فهم الصورة كاملة، بعيدًا عن الضجيج.</p>
+                        <a href="article.html?id=opinion-media-future" class="read-more">اقرأ رأي التحرير <i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                    </div>
+                </section>
+                <hr> <!-- Horizontal rule for separation -->
+
+                <!-- Latest News Section -->
+                <section class="latest-news">
+                    <h2 class="section-title">آخر الأخبار</h2>
+                    <div class="articles-grid">
+                        <!-- News items here -->
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/article1/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">اقتصاد</span>
+                                <h3>النمو الاقتصادي العالمي يتجاوز التوقعات بفضل الابتكار التكنولوجي</h3>
+                                <p>أظهرت التقارير الاقتصادية الأخيرة أن الابتكارات في قطاع التكنولوجيا ساهمت بشكل كبير في دفع عجلة النمو الاقتصادي العالمي.</p>
+                                <a href="article.html?id=latest-economy-growth" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/politics-latest/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">سياسة</span>
+                                <h3>مفاوضات السلام في الشرق الأوسط تحقق تقدماً ملحوظاً</h3>
+                                <p>بعد جولات مكثفة من المحادثات، أعلنت الأطراف المتفاوضة عن التوصل إلى اتفاق مبدئي يمهد الطريق لحل شامل في المنطقة.</p>
+                                <a href="article.html?id=latest-peace-talks" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/article2/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">رياضة</span>
+                                <h3>المنتخب العربي يتوج بطلاً لكأس القارات بعد مباراة ماراثونية</h3>
+                                <p>في ليلة تاريخية، حقق المنتخب العربي فوزاً صعباً على نظيره الأوروبي بنتيجة 3-2 في نهائي بطولة كأس القارات بعد أداء مبهر.</p>
+                                <a href="article.html?id=latest-arab-cup" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/article3/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">تكنولوجيا</span>
+                                <h3>الذكاء الاصطناعي يغير وجه التعليم: منصات جديدة للتعلم التفاعلي</h3>
+                                <p>شهد قطاع التعليم تطوراً كبيراً مع ظهور منصات تعتمد على الذكاء الاصطناعي لتقديم تجارب تعلم مخصصة وتفاعلية للطلاب.</p>
+                                <a href="article.html?id=latest-ai-education" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <hr> <!-- Horizontal rule for separation -->
+
+                <!-- Most Read Section -->
+                <section class="most-read-section">
+                    <h2 class="section-title">الأكثر قراءة</h2>
+                    <div class="articles-grid">
+                        <!-- Most read items here -->
+                        <article class="news-card">
+                            <div class="rank-number">1</div>
+                            <img src="https://picsum.photos/seed/mostread1/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">اقتصاد</span>
+                                <h3>تحليل: كيف ستؤثر قرارات الفائدة الجديدة على مدخراتك؟</h3>
+                                <p>نظرة معمقة على التبعات الاقتصادية لآخر قرارات البنك المركزي وتأثيرها المباشر على المواطنين.</p>
+                                <a href="article.html?id=mostread-interest-rates" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="rank-number">2</div>
+                            <img src="https://picsum.photos/seed/mostread2/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">صحة</span>
+                                <h3>دراسة تكشف عن علاقة النوم الجيد بزيادة الإنتاجية</h3>
+                                <p>باحثون يؤكدون أن الحصول على قسط كافٍ من النوم يمكن أن يعزز الأداء الوظيفي بنسبة تصل إلى 30%.</p>
+                                <a href="article.html?id=mostread-sleep-productivity" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="rank-number">3</div>
+                            <img src="https://picsum.photos/seed/mostread3/600/400" alt="صورة خبر">
+                            <div class="card-content">
+                                <span class="category">تكنولوجيا</span>
+                                <h3>هل نحن مستعدون للجيل السادس من شبكات الاتصالات (6G)؟</h3>
+                                <p>خبراء يناقشون الإمكانيات الهائلة والتحديات الكبرى التي تواجه تطوير وتطبيق تقنية 6G.</p>
+                                <a href="article.html?id=mostread-6g-future" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <hr> <!-- Horizontal rule for separation -->
+
+                <!-- Opinion Articles Section -->
+                <section class="opinion-section">
+                    <h2 class="section-title">مقالات الرأي</h2>
+                    <div class="opinion-grid">
+                        <!-- Opinion items here -->
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/author1/100/100" alt="صورة الكاتب" class="author-img">
+                                <span class="author-name">د. أحمد خالد</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>مستقبل الإعلام في ظل التطورات التكنولوجية</h3>
+                                <a href="article.html?id=opinion-media-future" class="read-more">اقرأ المقال</a>
+                            </div>
+                        </article>
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/author2/100/100" alt="صورة الكاتب" class="author-img">
+                                <span class="author-name">أ. سارة عبدالله</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>التحول الرقمي: فرصة أم تحدي للاقتصادات الناشئة؟</h3>
+                                <a href="article.html?id=opinion-digital-transformation" class="read-more">اقرأ المقال</a>
+                            </div>
+                        </article>
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/author3/100/100" alt="صورة الكاتب" class="author-img">
+                                <span class="author-name">م. علي حسن</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>الرياضة وصناعة الأمل: كيف تغير الملاعب حياة الشباب</h3>
+                                <a href="article.html?id=opinion-sports-hope" class="read-more">اقرأ المقال</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <hr> <!-- Horizontal rule for separation -->
+
+                <!-- Video Section -->
+                <section class="video-section">
+                    <h2 class="section-title">فيديوهات</h2>
+                    <div class="videos-grid">
+                        <!-- Video items here -->
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ" tabindex="0" aria-label="تشغيل مقابلة الخبير الاقتصادي">
+                            <div class="video-thumbnail" role="button" tabindex="0" aria-label="تشغيل الفيديو">
+                                <img src="https://picsum.photos/seed/video1/600/400" alt="صورة مصغرة للفيديو">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div> <!-- Video 1 -->
+                            <h3 class="video-title">مقابلة حصرية مع خبير اقتصادي حول مستقبل الأسواق</h3>
+                        </div>
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/rokGy0huYEA" tabindex="0" aria-label="تشغيل أبرز لقطات المباراة">
+                            <div class="video-thumbnail" role="button" tabindex="0" aria-label="تشغيل الفيديو">
+                                <img src="https://picsum.photos/seed/video2/600/400" alt="صورة مصغرة للفيديو">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div> <!-- Video 2 -->
+                            <h3 class="video-title">أبرز لقطات المباراة النهائية في بطولة التنس العالمية</h3>
+                        </div>
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/G5H3zD-h6yM" tabindex="0" aria-label="تشغيل جولة مصنع السيارات الكهربائية">
+                            <div class="video-thumbnail" role="button" tabindex="0" aria-label="تشغيل الفيديو">
+                                <img src="https://picsum.photos/seed/video3/600/400" alt="صورة مصغرة للفيديو">
+                                <div class="play-icon"><i class="fas fa-play"></i></div>
+                            </div> <!-- Video 3 -->
+                            <h3 class="video-title">جولة داخل أحدث مصانع السيارات الكهربائية في العالم</h3>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="sidebar-column">
+                <!-- Weather Section -->
+                <section class="weather-section">
+                    <h2 class="section-title">
+                        الطقس في الأردن
+                        <a href="https://www.arabiaweather.com/jordan" target="_blank" class="weather-source">(المصدر: طقس العرب)</a>
+                    </h2>
+                    <div class="weather-box">
+                        <ul class="weather-list">
+                            <li><i class="fas fa-sun"></i><span>عمان</span><strong>32°</strong></li>
+                            <li><i class="fas fa-cloud-sun"></i><span>إربد</span><strong>30°</strong></li>
+                            <li><i class="fas fa-sun"></i><span>الزرقاء</span><strong>34°</strong></li>
+                            <li><i class="fas fa-cloud-sun"></i><span>السلط</span><strong>29°</strong></li>
+                            <li><i class="fas fa-sun"></i><span>المفرق</span><strong>35°</strong></li>
+                            <li><i class="fas fa-cloud"></i><span>جرش</span><strong>28°</strong></li>
+                            <li><i class="fas fa-cloud"></i><span>عجلون</span><strong>27°</strong></li>
+                            <li><i class="fas fa-sun"></i><span>مأدبا</span><strong>31°</strong></li>
+                            <li><i class="fas fa-cloud-sun"></i><span>الكرك</span><strong>30°</strong></li>
+                            <li><i class="fas fa-cloud-sun"></i><span>الطفيلة</span><strong>29°</strong></li>
+                            <li><i class="fas fa-sun"></i><span>معان</span><strong>36°</strong></li>
+                            <li><i class="fas fa-sun"></i><span>العقبة</span><strong>39°</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="sidebar-brief" aria-labelledby="sidebar-brief-title">
+                    <div class="sidebar-brief-heading"><span class="section-kicker">مختارات التحرير</span><i class="fas fa-bookmark" aria-hidden="true"></i></div>
+                    <h2 id="sidebar-brief-title">موجز اليوم</h2>
+                    <a href="article.html?id=economy-stocks-surge"><span>01</span>أسواق الأسهم تنتعش بعد تقنية البطاريات الجديدة<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                    <a href="article.html?id=sports-world-cup-2034"><span>02</span>الإعلان عن الدولة المستضيفة لكأس العالم 2034<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                    <a href="article.html?id=tech-vr-shopping"><span>03</span>الواقع الافتراضي يغيّر مفهوم التسوق<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <section class="homepage-alerts" aria-labelledby="alerts-title">
+        <div class="container homepage-alerts-inner">
+            <div class="alerts-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+            <div><span class="section-kicker">تنبيهك الشخصي</span><h2 id="alerts-title">لا تفوّت الخبر الجديد</h2><p>فعّل التنبيهات ليصلك الجديد من ظاهر فور نشره.</p></div>
+            <button id="homepage-alerts-button" class="alerts-button" type="button">تفعيل التنبيهات <i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+            <p id="homepage-alerts-message" class="alerts-message" role="status" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="homepage-intro" aria-label="ملخص المنصة">
+        <div class="container">
+            <div>
+                <span class="eyebrow">الأربعاء، 19 أغسطس 2026</span>
+                <h2>الصورة كاملة، في مكان واحد.</h2>
+                <p>نرصد ما يحدث حولك الآن، ونمنحك سياقًا أوضح للخبر.</p>
+            </div>
+            <div class="news-pulse" aria-label="مؤشرات المنصة">
+                <span><strong>24</strong> خبرًا اليوم</span>
+                <span><strong>06</strong> أقسام نشطة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer"> <!-- Main footer of the site -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>عن المنصة</h4>
+                    <p>منصة ظاهر الإعلامية هي مصدرك الأول للأخبار الموثوقة والتحليلات العميقة في مختلف المجالات، من السياسة والاقتصاد إلى الرياضة والتكنولوجيا.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="politics.html">سياسة</a></li>
+                        <li><a href="economy.html">اقتصاد</a></li>
+                        <li><a href="sports.html">رياضة</a></li>
+                        <li><a href="technology.html">تكنولوجيا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>تابعنا</h4>
+                    <p>انضم إلى شبكتنا على وسائل التواصل الاجتماعي لتبقى على اطلاع دائم.</p>
+                    <div class="footer-socials"> <!-- Social media links -->
+                        <a href="https://www.facebook.com/ThaheerMedia" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 - جميع الحقوق محفوظة - منصة ظاهر الإعلامية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal (Hidden by default) -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <div class="video-container">
+                <iframe id="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" title="العودة للأعلى">&uarr;</button> <!-- Back to top button -->
+
+    <script src="articles-data.js" defer></script> <!-- Article data -->
+    <script src="script.js" defer></script> <!-- Main JavaScript file -->
+</body>
+</html>

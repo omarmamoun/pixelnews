@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Meta tags for character set, viewport, and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - Pixel News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header"> <!-- Main header of the site -->
+        <div class="container">
+            <div class="logo"> <!-- Logo section -->
+                <a href="index.html"><img src="img/Beige Pink Pastel Aesthetic Minimalist Signature Beauty Brand Facebook Cover (1).png" alt="شعار Pixel News" class="logo-image"></a>
+            </div>
+            <nav class="main-nav"> <!-- Main navigation menu -->
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#">أخبار عاجلة</a></li>
+                    <li><a href="politics.html">سياسة</a></li>
+                    <li><a href="economy.html">اقتصاد</a></li>
+                    <li><a href="sports.html">رياضة</a></li>
+                    <li><a href="technology.html">تكنولوجيا</a></li>
+                    <li><a href="world.html">العالم</a></li>
+                    <li><a href="tourism.html">السياحة</a></li>
+                    <li><a href="environment.html">البيئة</a></li>
+                    <li><a href="culture.html">الثقافة والفنون</a></li>
+                    <li><a href="celebrities.html">المشاهير</a></li>
+                    <li><a href="events.html">المناسبات والوفيات</a></li>
+                    <li><a href="games.html">ألعاب ذكاء</a></li>
+                </ul>
+            </nav>
+            <div class="header-right-controls"> <!-- Right-aligned controls in the header -->
+                <label class="site-search" for="news-search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="news-search" type="search" placeholder="ابحث في الأخبار" aria-label="ابحث في الأخبار">
+                </label>
+                <div class="settings-container">
+                    <i class="fas fa-cog settings-icon" title="الإعدادات"></i>
+                    <div class="settings-menu">
+                        <div class="settings-menu-section">
+                            <h4>وضع العرض</h4>
+                            <div class="theme-switcher">
+                                <button id="light-mode-btn" class="theme-btn">فاتح</button>
+                                <button id="dark-mode-btn" class="theme-btn">داكن</button>
+                            </div>
+                        </div>
+                        <div class="settings-menu-section">
+                            <h4>حجم الخط</h4>
+                            <div class="font-size-switcher">
+                                <button id="font-small-btn" class="font-size-btn">صغير</button>
+                                <button id="font-medium-btn" class="font-size-btn">متوسط</button>
+                                <button id="font-large-btn" class="font-size-btn">كبير</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker">
+        <div class="ticker-title">عاجل</div>
+        <div class="news-scroll">
+            <span>خبر عاجل 1: تحديثات هامة في الساحة السياسية...</span>
+            <span>خبر عاجل 2: مؤشرات اقتصادية إيجابية تظهر في الأسواق العالمية...</span>
+            <span>خبر عاجل 3: اكتشاف علمي جديد قد يغير مستقبل الطب...</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container"> <!-- Main content area -->
+        <section class="contact-section"> <!-- Contact form section -->
+            <h2 class="section-title">اتصل بنا</h2>
+            <p class="section-subtitle">نحن هنا للاستماع إليك. استخدم النموذج أدناه للتواصل معنا مباشرة.</p>
+
+            <div class="contact-content-grid">
+                <div class="contact-form-container">
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">رسالتك</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+                <div class="contact-info"> <!-- Contact information details -->
+                    <h4>معلومات التواصل</h4>
+                    <p>يمكنك أيضاً التواصل معنا عبر القنوات التالية:</p>
+                    <ul>
+                        <li><strong>العنوان:</strong> شارع الإعلام، المدينة الإعلامية، دبي، الإمارات العربية المتحدة</li>
+                        <li><strong>الهاتف:</strong> +971 4 123 4567</li>
+                        <li><strong>البريد الإلكتروني:</strong> contact@zahermedia.com</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Info Section -->
+    <section class="homepage-intro" aria-label="ملخص المنصة">
+        <div class="container">
+            <div>
+                <span class="eyebrow">الأربعاء، 19 أغسطس 2026</span>
+                <h2>الصورة كاملة، في مكان واحد.</h2>
+                <p>نرصد ما يحدث حولك الآن، ونمنحك سياقًا أوضح للخبر.</p>
+            </div>
+            <div class="news-pulse" aria-label="مؤشرات المنصة">
+                <span><strong>24</strong> خبرًا اليوم</span>
+                <span><strong>06</strong> أقسام نشطة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer"> <!-- Main footer of the site -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>عن المنصة</h4>
+                    <p>منصة ظاهر الإعلامية هي مصدرك الأول للأخبار الموثوقة والتحليلات العميقة في مختلف المجالات.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="politics.html">سياسة</a></li>
+                        <li><a href="economy.html">اقتصاد</a></li>
+                        <li><a href="sports.html">رياضة</a></li>
+                        <li><a href="technology.html">تكنولوجيا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>تابعنا</h4>
+                    <p>انضم إلى شبكتنا على وسائل التواصل الاجتماعي لتبقى على اطلاع دائم.</p>
+                    <div class="footer-socials"> <!-- Social media links -->
+                        <a href="https://www.facebook.com/ThaheerMedia" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div> <!-- Social media links -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 - جميع الحقوق محفوظة - منصة ظاهر الإعلامية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="العودة للأعلى">&uarr;</button> <!-- Back to top button -->
+
+    <script src="articles-data.js" defer></script> <!-- Article data -->
+    <script src="script.js" defer></script> <!-- Main JavaScript file -->
+</body>
+</html>

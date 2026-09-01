@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Meta tags for character set, viewport, and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألعاب ذكاء - Pixel News</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .game-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .play-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .game-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .game-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        .modal-close:hover {
+            color: #ff0000;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .game-difficulty {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .difficulty-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .difficulty-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .game-content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="category-page" data-category="ألعاب ذكاء">
+
+    <!-- Header -->
+    <header class="site-header"> <!-- Main header of the site -->
+        <div class="container">
+            <div class="logo"> <!-- Logo section -->
+                <a href="index.html"><img src="img/Beige Pink Pastel Aesthetic Minimalist Signature Beauty Brand Facebook Cover (1).png" alt="شعار Pixel News" class="logo-image"></a>
+            </div>
+            <nav class="main-nav"> <!-- Main navigation menu -->
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#">أخبار عاجلة</a></li>
+                    <li><a href="politics.html">سياسة</a></li>
+                    <li><a href="economy.html">اقتصاد</a></li>
+                    <li><a href="sports.html">رياضة</a></li>
+                    <li><a href="technology.html">تكنولوجيا</a></li>
+                    <li><a href="world.html">العالم</a></li>
+                    <li><a href="tourism.html">السياحة</a></li>
+                    <li><a href="environment.html">البيئة</a></li>
+                    <li><a href="culture.html">الثقافة والفنون</a></li>
+                    <li><a href="celebrities.html">المشاهير</a></li>
+                    <li><a href="events.html">المناسبات والوفيات</a></li>
+                    <li><a href="games.html" class="active">ألعاب ذكاء</a></li>
+                </ul>
+            </nav>
+            <div class="header-right-controls"> <!-- Right-aligned controls in the header -->
+                <label class="site-search" for="news-search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="news-search" type="search" placeholder="ابحث في الأخبار" aria-label="ابحث في الأخبار">
+                </label>
+                <div class="settings-container">
+                    <i class="fas fa-cog settings-icon" title="الإعدادات"></i>
+                    <div class="settings-menu">
+                        <div class="settings-menu-section">
+                            <h4>وضع العرض</h4>
+                            <div class="theme-switcher">
+                                <button id="light-mode-btn" class="theme-btn">فاتح</button>
+                                <button id="dark-mode-btn" class="theme-btn">داكن</button>
+                            </div>
+                        </div>
+                        <div class="settings-menu-section">
+                            <h4>حجم الخط</h4>
+                            <div class="font-size-switcher">
+                                <button id="font-small-btn" class="font-size-btn">صغير</button>
+                                <button id="font-medium-btn" class="font-size-btn">متوسط</button>
+                                <button id="font-large-btn" class="font-size-btn">كبير</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker"> <!-- Breaking news ticker -->
+        <div class="ticker-title">عاجل</div>
+        <div class="news-scroll">
+            <span>استمتع بألعاب ذكاء مثيرة وتحديات ممتعة...</span>
+            <span>اختبر مهاراتك العقلية مع ألعابنا المتنوعة...</span>
+            <span>لعب وتعلم وتحدى نفسك مع أصدقائك...</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container"> <!-- Main content area -->
+        <section class="latest-news"> <!-- Section for smart games -->
+            <h2 class="section-title">ألعاب الذكاء والتحديات</h2>
+            <p style="text-align: center; margin-bottom: 30px;">اختر لعبتك المفضلة واختبر مهاراتك الذهنية</p>
+            
+            <div class="games-container">
+                <!-- Game Cards -->
+                <div class="game-card" onclick="openGame('puzzle')">
+                    <div class="game-icon">🧩</div>
+                    <h3>لعبة الألغاز</h3>
+                    <p>احل الألغاز الذهنية واختبر منطقك</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+
+                <div class="game-card" onclick="openGame('memory')">
+                    <div class="game-icon">🧠</div>
+                    <h3>لعبة الذاكرة</h3>
+                    <p>قوي ذاكرتك مع لعبة مطابقة الأزواج</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+
+                <div class="game-card" onclick="openGame('quiz')">
+                    <div class="game-icon">❓</div>
+                    <h3>المسابقة الثقافية</h3>
+                    <p>اختبر معلوماتك الثقافية والعامة</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+
+                <div class="game-card" onclick="openGame('wordchain')">
+                    <div class="game-icon">📝</div>
+                    <h3>سلسلة الكلمات</h3>
+                    <p>اربط الكلمات وكون سلاسل معقدة</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+
+                <div class="game-card" onclick="openGame('sudoku')">
+                    <div class="game-icon">🔢</div>
+                    <h3>السودوكو</h3>
+                    <p>حل ألغاز الأرقام الكلاسيكية</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+
+                <div class="game-card" onclick="openGame('wordcount')">
+                    <div class="game-icon">📖</div>
+                    <h3>عد الكلمات</h3>
+                    <p>جد أكبر عدد من الكلمات من الحروف</p>
+                    <button class="play-btn">العب الآن</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="game-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeGame()">&times;</span>
+            <h2 id="gameTitle">لعبة</h2>
+            <div class="game-difficulty" id="gameDifficulty"></div>
+            <div class="game-content" id="gameContent">
+                <!-- Game content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <section class="homepage-intro" aria-label="ملخص المنصة">
+        <div class="container">
+            <div>
+                <span class="eyebrow">الأربعاء، 19 أغسطس 2026</span>
+                <h2>تحدى نفسك وطور مهاراتك الذهنية</h2>
+                <p>استمتع بمجموعة متنوعة من الألعاب الذهنية والتحديات المثيرة.</p>
+            </div>
+            <div class="news-pulse" aria-label="مؤشرات المنصة">
+                <span><strong>6</strong> ألعاب متاحة</span>
+                <span><strong>3</strong> مستويات صعوبة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer"> <!-- Main footer of the site -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>عن المنصة</h4>
+                    <p>Pixel News هي مصدرك الأول للأخبار الموثوقة والتحليلات العميقة في مختلف المجالات، من السياسة والاقتصاد إلى الرياضة والتكنولوجيا.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="politics.html">سياسة</a></li>
+                        <li><a href="economy.html">اقتصاد</a></li>
+                        <li><a href="sports.html">رياضة</a></li>
+                        <li><a href="technology.html">تكنولوجيا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>تابعنا</h4>
+                    <p>انضم إلى شبكتنا على وسائل التواصل الاجتماعي لتبقى على اطلاع دائم.</p>
+                    <div class="footer-socials"> <!-- Social media links -->
+                        <a href="https://www.facebook.com" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 - جميع الحقوق محفوظة - Pixel News.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="العودة للأعلى">&uarr;</button> <!-- Back to top button -->
+
+    <script src="articles-data.js" defer></script> <!-- Article data -->
+    <script src="script.js" defer></script> <!-- Main JavaScript file -->
+    
+    <script>
+        // Games functionality
+        function openGame(gameType) {
+            const modal = document.getElementById('gameModal');
+            const title = document.getElementById('gameTitle');
+            const difficulty = document.getElementById('gameDifficulty');
+            const content = document.getElementById('gameContent');
+
+            // Create difficulty buttons
+            difficulty.innerHTML = `
+                <button class="difficulty-btn active" onclick="changeDifficulty(this, 'easy')">سهل</button>
+                <button class="difficulty-btn" onclick="changeDifficulty(this, 'medium')">متوسط</button>
+                <button class="difficulty-btn" onclick="changeDifficulty(this, 'hard')">صعب</button>
+            `;
+
+            // Set game content based on type
+            const games = {
+                puzzle: { title: 'لعبة الألغاز', html: '<p>جارٍ تحميل اللعبة...</p>' },
+                memory: { title: 'لعبة الذاكرة', html: '<p>جارٍ تحميل اللعبة...</p>' },
+                quiz: { title: 'المسابقة الثقافية', html: '<p>جارٍ تحميل اللعبة...</p>' },
+                wordchain: { title: 'سلسلة الكلمات', html: '<p>جارٍ تحميل اللعبة...</p>' },
+                sudoku: { title: 'السودوكو', html: '<p>جارٍ تحميل اللعبة...</p>' },
+                wordcount: { title: 'عد الكلمات', html: '<p>جارٍ تحميل اللعبة...</p>' }
+            };
+
+            title.textContent = games[gameType]?.title || 'لعبة';
+            content.innerHTML = games[gameType]?.html || '<p>جارٍ تحميل اللعبة...</p>';
+            modal.classList.add('active');
+        }
+
+        function closeGame() {
+            document.getElementById('gameModal').classList.remove('active');
+        }
+
+        function changeDifficulty(element, difficulty) {
+            document.querySelectorAll('.difficulty-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('gameModal');
+            if (event.target === modal) {
+                closeGame();
+            }
+        }
+    </script>
+</body>
+</html>
