@@ -1,0 +1,16 @@
+.git
+.github
+.vscode
+.history
+vendor
+node_modules
+.env
+.env.*
+!.env.example
+api/Save-Data
+api/Save-Data.tmp
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
+*.pfx
+*.p12

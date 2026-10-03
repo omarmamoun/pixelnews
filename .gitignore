@@ -1,0 +1,13 @@
+*.pfx
+*.p12
+.env
+.env.*
+!.env.example
+.history/
+api/Save-Data
+api/Save-Data.tmp
+api/password-resets.json
+api/social-posts.json
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess

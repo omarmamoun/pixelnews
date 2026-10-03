@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شاهد المقاطع القصيرة من Pixel News">
+    <meta name="theme-color" content="#111318">
+    <title>ريلز - Pixel News</title>
+    <link rel="icon" href="img/pixel.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reels.css">
+</head>
+<body class="reels-page">
+    <header class="site-header">
+        <div class="container">
+            <div class="logo"><a href="index.html" aria-label="Pixel News"><img src="img/pixel.png" alt="شعار Pixel News" class="logo-image"></a></div>
+            <nav class="main-nav" aria-label="التنقل الرئيسي"><ul></ul></nav>
+            <div class="header-right-controls">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="reels-main">
+        <div class="reels-heading">
+            <div><span class="reels-kicker">Pixel News · فيديو قصير</span><h1>ريلز</h1></div>
+        </div>
+        <p id="reels-status" class="reels-status" role="status" aria-live="polite"></p>
+        <section id="reels-feed" class="reels-feed" aria-label="مقاطع الريلز" tabindex="0">
+            <div class="reels-loading"><i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i><span>تحميل المقاطع...</span></div>
+        </section>
+    </main>
+
+    <dialog id="reel-comments-dialog" class="reel-comments-dialog" aria-labelledby="reel-comments-title">
+        <div class="reel-comments-header">
+            <h2 id="reel-comments-title">التعليقات</h2>
+            <button id="close-reel-comments" class="reel-icon-button" type="button" aria-label="إغلاق التعليقات"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+        </div>
+        <div id="reel-comments-list" class="reel-comments-list"></div>
+        <form id="reel-comment-form" class="reel-comment-form">
+            <label class="visually-hidden" for="reel-comment-input">اكتب تعليقًا</label>
+            <input id="reel-comment-input" name="comment" maxlength="1000" placeholder="اكتب تعليقًا..." required>
+            <button type="submit" aria-label="إرسال التعليق"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+        </form>
+    </dialog>
+
+    <script src="articles-data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="reels.js" defer></script>
+</body>
+</html>

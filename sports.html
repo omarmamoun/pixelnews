@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="آخر أخبار الرياضة - كرة القدم، كرة السلة، التنس، الأولمبياد والمزيد على منصة Pixel News">
+    <meta name="theme-color" content="#ffffff">
+    <title>الرياضة - Pixel News</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/pixel.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="img/pixel.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="category-page sports-page" data-category="رياضة">
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="العودة إلى الصفحة الرئيسية">
+                     <img src="img/pixel.png" alt="شعار Pixel News" class="logo-image">
+                 </a>
+            </div>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#">أخبار عاجلة</a></li>
+                    <li><a href="politics.html">سياسة</a></li>
+                    <li><a href="economy.html">اقتصاد</a></li>
+                    <li><a href="sports.html" class="active">رياضة</a></li>
+                    <li><a href="technology.html">تكنولوجيا</a></li>
+                    <li><a href="world.html">العالم</a></li>
+                    <li><a href="tourism.html">السياحة</a></li>
+                    <li><a href="environment.html">البيئة</a></li>
+                    <li><a href="culture.html">الثقافة والفنون</a></li>
+                    <li><a href="celebrities.html">المشاهير</a></li>
+                    <li><a href="events.html">المناسبات</a></li>
+                    <li><a href="games.html">ألعاب ذكاء</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right-controls">
+                <label class="site-search" for="news-search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input id="news-search" name="search" type="search" placeholder="ابحث في الأخبار..." aria-label="ابحث في الأخبار">
+                </label>
+                
+                <div class="settings-container">
+                    <button class="settings-icon-btn" id="settings-toggle" aria-label="الإعدادات" aria-expanded="false" type="button">
+                        <i class="fas fa-cog" aria-hidden="true"></i>
+                    </button>
+                    <div class="settings-menu" id="settings-menu" hidden>
+                        <div class="settings-menu-section">
+                            <h4>وضع العرض</h4>
+                            <div class="theme-switcher">
+                                <button id="light-mode-btn" class="theme-btn active" type="button">فاتح</button>
+                                <button id="dark-mode-btn" class="theme-btn" type="button">داكن</button>
+                            </div>
+                        </div>
+                        <div class="settings-menu-section">
+                            <h4>حجم الخط</h4>
+                            <div class="font-size-switcher">
+                                <button id="font-small-btn" class="font-size-btn" type="button">صغير</button>
+                                <button id="font-medium-btn" class="font-size-btn active" type="button">متوسط</button>
+                                <button id="font-large-btn" class="font-size-btn" type="button">كبير</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة" type="button">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news-ticker" aria-label="شريط الأخبار العاجلة">
+        <div class="ticker-title"><i class="fas fa-bolt" aria-hidden="true"></i> عاجل</div>
+        <div class="news-scroll">
+            <span>لا توجد أخبار عاجلة رياضية حاليًا.</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Page Header -->
+        <section class="page-header" aria-labelledby="sports-title">
+            <div class="page-header-content">
+                <i class="fas fa-futbol page-icon" aria-hidden="true"></i>
+                <div>
+                    <h1 id="sports-title">عالم الرياضة</h1>
+                    <p>آخر الأخبار والتحليلات الرياضية من حول العالم</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Category Filters -->
+        <section class="news-discovery" aria-label="تصفية حسب الرياضة">
+            <div class="category-filters" role="group" aria-label="تصفية حسب الرياضة">
+                <button class="filter-btn active" type="button" data-filter="all">الكل</button>
+                <button class="filter-btn" type="button" data-filter="football">كرة القدم</button>
+                <button class="filter-btn" type="button" data-filter="basketball">كرة السلة</button>
+                <button class="filter-btn" type="button" data-filter="tennis">التنس</button>
+                <button class="filter-btn" type="button" data-filter="olympics">الأولمبياد</button>
+                <button class="filter-btn" type="button" data-filter="motorsport">رياضة المحركات</button>
+            </div>
+        </section>
+
+        <!-- Featured Sports Slider -->
+        <section class="featured-articles-section">
+            <div class="featured-wrapper">
+                <div class="featured-main">
+                    <section class="featured-articles-slider" aria-label="أخبار رياضية مميزة">
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/sports1/900/500" alt="صورة: المنتخب الوطني" loading="lazy">
+                            <div class="article-content">
+                                <span class="category">كرة القدم</span>
+                                <h2>المنتخب الوطني يحقق فوزاً تاريخياً ويتأهل إلى نهائيات كأس العالم</h2>
+                                <p>في ليلة لا تُنسى، تمكن المنتخب الوطني من تحقيق فوز كبير بنتيجة 3-1 على منافسه القوي، ليضمن بذلك مقعده في نهائيات كأس العالم 2026.</p>
+                                <a href="article.html?id=sports-featured-1" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/sports2/900/500" alt="صورة: بطولة التنس" loading="lazy">
+                            <div class="article-content">
+                                <span class="category">التنس</span>
+                                <h2>بطل عربي جديد يتوج بلقب بطولة الجراند سلام</h2>
+                                <p>حقق لاعب التنس العربي إنجازاً تاريخياً بفوزه بلقب بطولة الجراند سلام للمرة الأولى في تاريخ المنطقة.</p>
+                                <a href="article.html?id=sports-featured-2" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="featured-article">
+                            <img src="https://picsum.photos/seed/sports3/900/500" alt="صورة: الأولمبياد" loading="lazy">
+                            <div class="article-content">
+                                <span class="category">الأولمبياد</span>
+                                <h2>استعدادات مكثفة لاستضافة دورة الألعاب الأولمبية 2028</h2>
+                                <p>تتواصل الاستعدادات على قدم وساق لاستضافة دورة الألعاب الأولمبية القادمة، مع الإعلان عن مرافق رياضية عالمية المستوى.</p>
+                                <a href="article.html?id=sports-featured-3" class="read-more">اقرأ المزيد<i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+
+                        <div class="slider-dots" role="tablist" aria-label="التنقل بين الأخبار">
+                            <button class="dot active" data-slide-index="0" role="tab" aria-selected="true" aria-label="الخبر الأول" type="button"></button>
+                            <button class="dot" data-slide-index="1" role="tab" aria-selected="false" aria-label="الخبر الثاني" type="button"></button>
+                            <button class="dot" data-slide-index="2" role="tab" aria-selected="false" aria-label="الخبر الثالث" type="button"></button>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="featured-sidebar">
+                    <section class="featured-premium" aria-labelledby="premium-title">
+                        <div class="premium-badge"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+                        <h3 id="premium-title">أبرز النتائج</h3>
+                        <article class="premium-item">
+                            <img src="https://picsum.photos/seed/sports-premium1/200/150" alt="صورة" loading="lazy">
+                            <div>
+                                <span class="category-small">كرة القدم</span>
+                                <h4>دوري الأبطال: نتائج مثيرة في دور الـ16</h4>
+                                <a href="article.html?id=sports-premium1" aria-label="اقرأ المزيد"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                        <article class="premium-item">
+                            <img src="https://picsum.photos/seed/sports-premium2/200/150" alt="صورة" loading="lazy">
+                            <div>
+                                <span class="category-small">كرة السلة</span>
+                                <h4>NBA: ليلة تاريخية في finals</h4>
+                                <a href="article.html?id=sports-premium2" aria-label="اقرأ المزيد"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                        <article class="premium-item">
+                            <img src="https://picsum.photos/seed/sports-premium3/200/150" alt="صورة" loading="lazy">
+                            <div>
+                                <span class="category-small">الفورمولا 1</span>
+                                <h4>سباق موناكو: فوز مفاجئ في اللفات الأخيرة</h4>
+                                <a href="article.html?id=sports-premium3" aria-label="اقرأ المزيد"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="main-content-grid">
+            <div class="main-column">
+                
+                <!-- Latest Sports News -->
+                <section class="latest-news" aria-labelledby="latest-sports-title">
+                    <h2 id="latest-sports-title" class="section-title">
+                        <i class="fas fa-newspaper" aria-hidden="true"></i> آخر الأخبار الرياضية
+                    </h2>
+                    <div class="articles-grid">
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/football1/600/400" alt="صورة: انتقال لاعب" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">كرة القدم</span>
+                                <h3>انتقال قياسي: نجم الدوري الإسباني ينضم إلى الدوري الإنجليزي</h3>
+                                <p>أعلن النادي الإنجليزي عن التعاقد مع النجم العالمي في صفقة قياسية تجاوزت 150 مليون يورو.</p>
+                                <a href="article.html?id=sports-transfer-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/basketball1/600/400" alt="صورة: مباراة كرة سلة" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">كرة السلة</span>
+                                <h3>فريق عربي يحقق إنجازاً تاريخياً في دوري EuroLeague</h3>
+                                <p>تمكن الفريق العربي من التأهل إلى الدور نصف النهائي من البطولة الأوروبية لكرة السلة للمرة الأولى.</p>
+                                <a href="article.html?id=sports-basketball-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/tennis1/600/400" alt="صورة: مباراة تنس" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">التنس</span>
+                                <h3>بطولة ويمبلدون: مفاجآت في الدور ربع النهائي</h3>
+                                <p>شهدت بطولة ويمبلدون مفاجآت كبيرة بخروج عدد من المصنفين الأوائل في دور الـ8.</p>
+                                <a href="article.html?id=sports-tennis-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/f1-1/600/400" alt="صورة: سباق فورمولا 1" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">رياضة المحركات</span>
+                                <h3>فورمولا 1: سائق شاب يحقق أول فوز له في مسيرته</h3>
+                                <p>حقق السائق البالغ من العمر 22 عاماً أول فوز له في بطولة العالم للفورمولا 1 في سباق مثير.</p>
+                                <a href="article.html?id=sports-f1-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/swimming1/600/400" alt="صورة: سباحة" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">السباحة</span>
+                                <h3>رقم قياسي عالمي جديد في سباق 200 متر حرة</h3>
+                                <p>حطم السباح الأمريكي الرقم القياسي العالمي في سباق 200 متر حرة خلال بطولة العالم للسباحة.</p>
+                                <a href="article.html?id=sports-swimming-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                        
+                        <article class="news-card">
+                            <img src="https://picsum.photos/seed/volleyball1/600/400" alt="صورة: كرة طائرة" loading="lazy">
+                            <div class="card-content">
+                                <span class="category">الكرة الطائرة</span>
+                                <h3>المنتخب العربي يتوج بطلاً لآسيا في الكرة الطائرة</h3>
+                                <p>حقق المنتخب العربي لقب البطولة الآسيوية للكرة الطائرة بعد فوزه في المباراة النهائية.</p>
+                                <a href="article.html?id=sports-volleyball-1" class="read-more">اقرأ المزيد</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Match Results Section -->
+                <section class="match-results-section" aria-labelledby="results-title">
+                    <h2 id="results-title" class="section-title">
+                        <i class="fas fa-trophy" aria-hidden="true"></i> نتائج المباريات
+                    </h2>
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <div class="match-league">دوري أبطال أوروبا</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team1/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>ريال مدريد</span>
+                                </div>
+                                <div class="match-score">3 - 1</div>
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team2/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>بايرن ميونخ</span>
+                                </div>
+                            </div>
+                            <div class="match-status finished">انتهت</div>
+                        </div>
+                        
+                        <div class="match-card">
+                            <div class="match-league">الدوري الإنجليزي</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team3/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>مانشستر سيتي</span>
+                                </div>
+                                <div class="match-score">2 - 2</div>
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team4/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>ليفربول</span>
+                                </div>
+                            </div>
+                            <div class="match-status finished">انتهت</div>
+                        </div>
+                        
+                        <div class="match-card">
+                            <div class="match-league">الدوري الإسباني</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team5/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>برشلونة</span>
+                                </div>
+                                <div class="match-score">VS</div>
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team6/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>أتلتيكو مدريد</span>
+                                </div>
+                            </div>
+                            <div class="match-status upcoming">اليوم 21:00</div>
+                        </div>
+                        
+                        <div class="match-card">
+                            <div class="match-league">الدوري السعودي</div>
+                            <div class="match-teams">
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team7/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>الهلال</span>
+                                </div>
+                                <div class="match-score">VS</div>
+                                <div class="team">
+                                    <img src="https://picsum.photos/seed/team8/50/50" alt="شعار الفريق" loading="lazy">
+                                    <span>النصر</span>
+                                </div>
+                            </div>
+                            <div class="match-status upcoming">غداً 20:00</div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Sports Analysis Section -->
+                <section class="opinion-section" aria-labelledby="analysis-title">
+                    <h2 id="analysis-title" class="section-title">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i> تحليلات رياضية
+                    </h2>
+                    <div class="opinion-grid">
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/analyst1/100/100" alt="صورة المحلل" loading="lazy" class="author-img">
+                                <span class="author-name">أ. محمد الرياضي</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>مستقبل كرة القدم العربية: تحديات وفرص</h3>
+                                <p>نظرة تحليلية على تطور الكرة العربية في السنوات الأخيرة وما ينتظرها في المستقبل.</p>
+                                <a href="article.html?id=sports-analysis-1" class="read-more">اقرأ التحليل</a>
+                            </div>
+                        </article>
+                        
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/analyst2/100/100" alt="صورة المحلل" loading="lazy" class="author-img">
+                                <span class="author-name">د. سارة الخبيرة</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>تأثير التكنولوجيا على الحكمة الرياضية</h3>
+                                <p>كيف غيّر VAR والتقنيات الحديثة مفهوم العدالة في الملاعب الرياضية.</p>
+                                <a href="article.html?id=sports-analysis-2" class="read-more">اقرأ التحليل</a>
+                            </div>
+                        </article>
+                        
+                        <article class="opinion-card">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/analyst3/100/100" alt="صورة المحلل" loading="lazy" class="author-img">
+                                <span class="author-name">م. علي المحترف</span>
+                            </div>
+                            <div class="opinion-content">
+                                <h3>الاستثمار في الرياضة: نموذج النجاح الخليجي</h3>
+                                <p>دراسة حالة عن كيفية تحويل دول الخليج الرياضة إلى صناعة اقتصادية ناجحة.</p>
+                                <a href="article.html?id=sports-analysis-3" class="read-more">اقرأ التحليل</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <hr>
+
+                <!-- Sports Videos -->
+                <section class="video-section" aria-labelledby="sports-videos-title">
+                    <h2 id="sports-videos-title" class="section-title">
+                        <i class="fas fa-video" aria-hidden="true"></i> فيديوهات رياضية
+                    </h2>
+                    <div class="videos-grid">
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/LXb3EKWsInQ" tabindex="0" role="button" aria-label="تشغيل: أهداف المباراة">
+                            <div class="video-thumbnail" tabindex="-1">
+                                <img src="https://picsum.photos/seed/sports-video1/600/400" alt="صورة مصغرة" loading="lazy">
+                                <div class="play-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                            </div>
+                            <h3 class="video-title">أجمل أهداف الجولة في الدوري الأوروبي</h3>
+                        </div>
+                        
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/rokGy0huYEA" tabindex="0" role="button" aria-label="تشغيل: ملخص المباراة">
+                            <div class="video-thumbnail" tabindex="-1">
+                                <img src="https://picsum.photos/seed/sports-video2/600/400" alt="صورة مصغرة" loading="lazy">
+                                <div class="play-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                            </div>
+                            <h3 class="video-title">ملخص مباراة الكلاسيكو: ريال مدريد vs برشلونة</h3>
+                        </div>
+                        
+                        <div class="video-card" data-video-src="https://www.youtube.com/embed/G5H3zD-h6yM" tabindex="0" role="button" aria-label="تشغيل: لقطات السباق">
+                            <div class="video-thumbnail" tabindex="-1">
+                                <img src="https://picsum.photos/seed/sports-video3/600/400" alt="صورة مصغرة" loading="lazy">
+                                <div class="play-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                            </div>
+                            <h3 class="video-title">أبرز لقطات سباق الجائزة الكبرى للفورمولا 1</h3>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar-column">
+                
+                <!-- Standings Table -->
+                <section class="standings-section" aria-labelledby="standings-title">
+                    <h2 id="standings-title" class="section-title">
+                        <i class="fas fa-list-ol" aria-hidden="true"></i> ترتيب الدوري
+                    </h2>
+                    <div class="standings-box">
+                        <table class="standings-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>الفريق</th>
+                                    <th>لعب</th>
+                                    <th>نقاط</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>ريال مدريد</td><td>28</td><td><strong>72</strong></td></tr>
+                                <tr><td>2</td><td>برشلونة</td><td>28</td><td><strong>68</strong></td></tr>
+                                <tr><td>3</td><td>أتلتيكو مدريد</td><td>28</td><td><strong>62</strong></td></tr>
+                                <tr><td>4</td><td>جيرونا</td><td>28</td><td><strong>58</strong></td></tr>
+                                <tr><td>5</td><td>أتلتيك بلباو</td><td>28</td><td><strong>54</strong></td></tr>
+                                <tr><td>6</td><td>ريال سوسيداد</td><td>28</td><td><strong>48</strong></td></tr>
+                                <tr><td>7</td><td>ريال بيتيس</td><td>28</td><td><strong>45</strong></td></tr>
+                                <tr><td>8</td><td>فالنسيا</td><td>28</td><td><strong>42</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Top Scorers -->
+                <section class="top-scorers-section" aria-labelledby="scorers-title">
+                    <h2 id="scorers-title" class="section-title">
+                        <i class="fas fa-futbol" aria-hidden="true"></i> هدافو الدوري
+                    </h2>
+                    <div class="scorers-list">
+                        <div class="scorer-item">
+                            <img src="https://picsum.photos/seed/scorer1/60/60" alt="صورة اللاعب" loading="lazy">
+                            <div class="scorer-info">
+                                <strong>هاري كين</strong>
+                                <span>بايرن ميونخ</span>
+                            </div>
+                            <div class="scorer-goals">28</div>
+                        </div>
+                        <div class="scorer-item">
+                            <img src="https://picsum.photos/seed/scorer2/60/60" alt="صورة اللاعب" loading="lazy">
+                            <div class="scorer-info">
+                                <strong>كيليان مبابي</strong>
+                                <span>ريال مدريد</span>
+                            </div>
+                            <div class="scorer-goals">24</div>
+                        </div>
+                        <div class="scorer-item">
+                            <img src="https://picsum.photos/seed/scorer3/60/60" alt="صورة اللاعب" loading="lazy">
+                            <div class="scorer-info">
+                                <strong>إيرلينغ هالاند</strong>
+                                <span>مانشستر سيتي</span>
+                            </div>
+                            <div class="scorer-goals">22</div>
+                        </div>
+                        <div class="scorer-item">
+                            <img src="https://picsum.photos/seed/scorer4/60/60" alt="صورة اللاعب" loading="lazy">
+                            <div class="scorer-info">
+                                <strong>محمد صلاح</strong>
+                                <span>ليفربول</span>
+                            </div>
+                            <div class="scorer-goals">20</div>
+                        </div>
+                        <div class="scorer-item">
+                            <img src="https://picsum.photos/seed/scorer5/60/60" alt="صورة اللاعب" loading="lazy">
+                            <div class="scorer-info">
+                                <strong>فينيسيوس جونيور</strong>
+                                <span>ريال مدريد</span>
+                            </div>
+                            <div class="scorer-goals">18</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Events -->
+                <section class="sidebar-brief" aria-labelledby="upcoming-title">
+                    <div class="sidebar-brief-heading">
+                        <span class="section-kicker">القادمة</span>
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    </div>
+                    <h2 id="upcoming-title">أبرز الأحداث</h2>
+                    <a href="article.html?id=event-1">
+                        <span>01</span>
+                        نهائي دوري أبطال أوروبا - 31 مايو
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                    <a href="article.html?id=event-2">
+                        <span>02</span>
+                        بطولة ويمبلدون - يوليو 2026
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                    <a href="article.html?id=event-3">
+                        <span>03</span>
+                        أولمبياد لوس أنجلوس 2028
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                </section>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="homepage-alerts" aria-labelledby="alerts-title">
+        <div class="container homepage-alerts-inner">
+            <div class="alerts-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+            <div>
+                <span class="section-kicker">تنبيهك الرياضي</span>
+                <h2 id="alerts-title">لا تفوّت أي مباراة</h2>
+                <p>فعّل التنبيهات لتصلك نتائج المباريات وأهم الأخبار الرياضية فوراً.</p>
+            </div>
+            <button id="homepage-alerts-button" class="alerts-button" type="button">تفعيل التنبيهات <i class="fas fa-arrow-left" aria-hidden="true"></i></button>
+            <p id="homepage-alerts-message" class="alerts-message" role="status" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>عن المنصة</h4>
+                    <p>منصة Pixel News هي مصدرك الأول للأخبار الموثوقة والتحليلات العميقة في مختلف المجالات، من السياسة والاقتصاد إلى الرياضة والتكنولوجيا.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="politics.html">سياسة</a></li>
+                        <li><a href="economy.html">اقتصاد</a></li>
+                        <li><a href="sports.html">رياضة</a></li>
+                        <li><a href="technology.html">تكنولوجيا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>تابعنا</h4>
+                    <p>انضم إلى شبكتنا على وسائل التواصل الاجتماعي لتبقى على اطلاع دائم.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/ThaheerMedia" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="تويتر (X)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="إنستغرام"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="يوتيوب"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 - جميع الحقوق محفوظة - منصة Pixel News الإعلامية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-labelledby="modal-video-title" hidden>
+        <div class="video-modal-content">
+            <button class="close-modal-btn" id="close-video-modal" aria-label="إغلاق الفيديو" type="button">&times;</button>
+            <h3 id="modal-video-title" class="visually-hidden">مشغل الفيديو</h3>
+            <div class="video-container">
+                <iframe id="video-iframe" src="" title="مشغل فيديو" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" title="العودة للأعلى" aria-label="العودة إلى أعلى الصفحة" hidden>&uarr;</button>
+
+    <!-- Scripts -->
+    <script src="articles-data.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
